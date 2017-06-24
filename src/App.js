@@ -3,7 +3,7 @@ import { Motion, StaggeredMotion, spring } from 'react-motion';
 import styled from 'styled-components';
 import Color from 'color';
 import { connect } from 'react-redux';
-import store from './store';
+// import store from './store';
 
 
 const Box = styled.div`
@@ -169,15 +169,15 @@ const ClippedText = styled.h1`
 //   }
 // }
 class App extends Component {
-  constructor(props) {
-    super(props);
-  }
+  // constructor(props) {
+  //   super(props);
+  // }
 
   handleShow = () => {
-    store.dispatch({
+    this.props.dispatch({
       type: 'TOGGLE',
     });
-    setTimeout(() =>  store.dispatch({
+    setTimeout(() =>  this.props.dispatch({
         type: 'TOGGLE',
       }), 500)
   };
